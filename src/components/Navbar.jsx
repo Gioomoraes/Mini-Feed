@@ -3,11 +3,11 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <nav>
-      <NavLink to="/">
+    <nav className={styles.navbar}>
+      <NavLink to="/" className={styles.brand}>
         Mini <span>Feed</span>
       </NavLink>
-      <ul>
+      <ul className={styles.links}>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
