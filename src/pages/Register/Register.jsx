@@ -11,7 +11,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { createUser, error: AuthErrorCodes, loading } = useAuthentication();
+  const { createUser, error: AuthError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +32,12 @@ const Register = () => {
 
     console.log(res);
   };
+
+  useEffect(() => {
+    if (AuthError) {
+      setError(AuthError);
+    }
+  }, [AuthError]);
 
   return (
     <div className={styles.register}>
