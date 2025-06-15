@@ -26,9 +26,9 @@ O projeto está estruturado em pastas principais como:
 - `hooks/` – hooks personalizados (como autenticação)
 - `styles/` – estilos modulares
 
-## 👩‍💻 Autora
+## 👩‍💻 Autora 💜
 
-Feito com 💜 por [Giovanna Moraes](https://github.com/Gioomoraes)
+[Giovanna Moraes](https://github.com/Gioomoraes)
 
 ---
 
