@@ -21,10 +21,10 @@ O **Mini-Feed** é um projeto em desenvolvimento que simula uma rede social simp
 
 O projeto está estruturado em pastas principais como:
 
-- `pages/` – telas do sistema (Login, Register, Home, etc.)
-- `components/` – componentes reutilizáveis
-- `hooks/` – hooks personalizados (como autenticação)
-- `styles/` – estilos modulares
+- `pages/` - telas do sistema (Login, Register, Home, etc.)
+- `components/` - componentes reutilizáveis
+- `hooks/` - hooks personalizados (como autenticação)
+- `styles/` - estilos modulares
 
 ## 👩‍💻 Autora 💜
 
