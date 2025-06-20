@@ -14,6 +14,16 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
 function App() {
+
+const [user, setUser] = useState(undefined);
+const {auth} = useAuthentication();
+
+const loadingUser = user === undefined;
+
+if (loadingUser) {
+  return <p>Carregando...</p>;
+}
+
   return (
     <div className="App">
      <AuthProvider>
