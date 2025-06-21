@@ -4,9 +4,9 @@ import { db } from "../firebase/config";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  // signInWithEmailAndPassword,
   updateProfile,
-  signOut,
+  // signOut,
 } from "firebase/auth";
 
 import { useState, useEffect } from "react";

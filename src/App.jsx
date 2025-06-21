@@ -4,7 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
 
-import {AuthProvider} from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -17,6 +17,7 @@ function App() {
 
 const [user, setUser] = useState(undefined);
 const {auth} = useAuthentication();
+
 
 const loadingUser = user === undefined;
 
@@ -32,7 +33,7 @@ if (loadingUser) {
 
   return (
     <div className="App">
-     <AuthProvider>
+       <AuthProvider value={{ user }}>
        <BrowserRouter>
         <Navbar />
         <div className="container">
@@ -45,7 +46,7 @@ if (loadingUser) {
         </div>
         <Footer />
       </BrowserRouter>
-     </AuthProvider>
+      </AuthProvider>
     </div>
   );
 }
