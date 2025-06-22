@@ -1,12 +1,11 @@
-import { db } from "../firebase/config";
-
+import "../firebase/config"
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   // signInWithEmailAndPassword,
   updateProfile,
-  // signOut,
+  signOut,
 } from "firebase/auth";
 
 import { useState, useEffect } from "react";
@@ -29,7 +28,6 @@ export const useAuthentication = () => {
     checkIfIsCancelled();
 
     setLoading(true);
-    setError(null);
 
     try {
       const { user } = await createUserWithEmailAndPassword(
@@ -42,7 +40,6 @@ export const useAuthentication = () => {
         displayName: data.displayName,
       });
 
-      setLoading(false);
 
       return user;
     } catch (error) {
@@ -58,9 +55,17 @@ export const useAuthentication = () => {
         systemErrorMessage =
           "Ocorreu um erro, Por favor tente novamente mais tarde.";
       }
-      setLoading(false);
       setError(systemErrorMessage);
     }
+
+setLoading(false);
+
+  };
+
+  const logout = () => {
+    checkIfIsCancelled();
+
+    signOut(auth);
   };
 
   useEffect(() => {
@@ -72,5 +77,6 @@ export const useAuthentication = () => {
     createUser,
     error,
     loading,
+    logout,
   };
 };
