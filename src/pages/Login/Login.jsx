@@ -1,10 +1,39 @@
 import styles from "./Login.module.css";
+import { useState, useEffect } from "react";
+
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+  
+    const { createUser, error: AuthError, loading } = useAuthentication();
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setError("");
+      const user = {
+        email,
+        password,
+      };
+  
+      
+  
+      const res = await createUser(user);
+  
+      console.log(res);
+    };
+  
+    useEffect(() => {
+      if (AuthError) {
+        setError(AuthError);
+      }
+    }, [AuthError]);
   return (
     <div>
       <h1>Entrar</h1>
-      <p>Crie seu usuário e compartilhe suas postagens!</p>
+      <p>Faça o login para poder utilizar o sistema!</p>
       <form onSubmit={handleSubmit}>
         
         <label>
@@ -30,7 +59,7 @@ const Login = () => {
           />
         </label>
         
-        {!loading && <button className="btn">Cadastrar</button>}
+        {!loading && <button className="btn">Entrar</button>}
         {loading && (
           <button className="btn" disabled>
             Aguarde...
