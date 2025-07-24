@@ -86,7 +86,7 @@ setLoading(false);
       } else if (error.message.includes("wrong-password")) {
 systemErrorMessage = "Senha incorreta.";
  } else {
-  systemErrorMessage = " Ocorreu um erro, por favor tente mais tarde. ";
+  systemErrorMessage = " Ocorreu um erro, por favor tente novamente. ";
  }
 
   setError(systemErrorMessage);
