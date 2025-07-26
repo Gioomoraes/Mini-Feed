@@ -21,6 +21,16 @@ const CreatePost = () => {
     console.log("Botão de cadastrar clicado!");
     setFormError("");
 
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.");
+    }
+
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    if (formError) return;
+
     insertDocument({
       title,
       image,
@@ -86,6 +96,7 @@ const CreatePost = () => {
           </button>
         )}
         {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
