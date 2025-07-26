@@ -1,9 +1,9 @@
-import "../firebase/config"
+import "../firebase/config";
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
- signInWithEmailAndPassword,
+  signInWithEmailAndPassword,
   updateProfile,
   signOut,
 } from "firebase/auth";
@@ -40,7 +40,6 @@ export const useAuthentication = () => {
         displayName: data.displayName,
       });
 
-
       return user;
     } catch (error) {
       console.log(error.message);
@@ -58,8 +57,7 @@ export const useAuthentication = () => {
       setError(systemErrorMessage);
     }
 
-setLoading(false);
-
+    setLoading(false);
   };
 
   const logout = () => {
@@ -68,30 +66,29 @@ setLoading(false);
     signOut(auth);
   };
 
-  const login = async(data) => {
- checkIfIsCancelled()
- 
- setLoading(true)
- setError(false)
+  const login = async (data) => {
+    checkIfIsCancelled();
 
- try{
-await signInWithEmailAndPassword(auth, data.email, data.password);
-setLoading(false);
- } catch(error){
+    setLoading(true);
+    setError(false);
 
-  let systemErrorMessage;
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch (error) {
+      let systemErrorMessage;
 
       if (error.message.includes("user-not-found")) {
         systemErrorMessage = "Usuário não encontrado.";
       } else if (error.message.includes("wrong-password")) {
-systemErrorMessage = "Senha incorreta.";
- } else {
-  systemErrorMessage = " Ocorreu um erro, por favor tente novamente. ";
- }
+        systemErrorMessage = "Senha incorreta.";
+      } else {
+        systemErrorMessage = " Ocorreu um erro, por favor tente novamente. ";
+      }
 
-  setError(systemErrorMessage);
-  setLoading(false);
- }
+      setError(systemErrorMessage);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
