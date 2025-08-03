@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { db } from "../firebase/config";
 import {
   collection,
@@ -36,10 +36,21 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             }))
           );
         });
+
+        setLoading(false);
       } catch (error) {
         console.log(error);
         setError(error.message);
+
+        setLoading(false);
       }
     }
+    loadData();
   }, [docCollection, search, uid, cancelled]);
+
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
+
+  return { documents, loading, error };
 };
