@@ -10,6 +10,10 @@ const Home = () => {
   const { documents: posts, loading } = useFetchDocuments("posts");
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return Navigate(`/search?q=${query}`);
+    }
   };
 
   return (
