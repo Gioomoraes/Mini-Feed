@@ -28,7 +28,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         let q;
 
         q = await query(collectionRef, orderBy("createdAt", "desc"));
-        await onSnapshot(q, (QuerySnapshot) => {
+        await onSnapshot(q, (querySnapshot) => {
           setDocuments(
             querySnapshot.docs.map((doc) => ({
               id: doc.id,
