@@ -10,5 +10,13 @@
 }
 
 .search_container p {
-  margin-bottom: 30px;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.noposts{
+    text-align: center;
 }

@@ -17,14 +17,14 @@ const Search = () => {
       <h2>Search</h2>
       <div>
         {posts && posts.length === 0 && (
-          <>
+          <div className={styles.noposts}>
             <p>
               Não foram encontrados posts a partir da sua busca...
               <Link to="/" className="btn btn-dark">
                 Voltar
               </Link>
             </p>
-          </>
+          </div>
         )}
         {posts &&
           posts.map((post) => <PostDetails key={post.id} post={post} />)}
