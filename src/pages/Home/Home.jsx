@@ -5,7 +5,7 @@ import { use, useState } from "react";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import PostDetails from "../../components/postDetails";
 
-const Home = () => { 
+const Home = () => {
   const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts");
   const handleSubmit = (e) => {
