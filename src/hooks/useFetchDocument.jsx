@@ -2,7 +2,7 @@ import { useState, useEffect, use } from "react";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 
-export const useFetchDocument = (docCollection) => {
+export const useFetchDocument = (docCollection, id) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -14,13 +14,27 @@ export const useFetchDocument = (docCollection) => {
       if (cancelled) return;
 
       setLoading(true);
+
+      try {
+        const docRef = await doc(db, docCollection, id);
+        const docSnap = await getDoc(docRef);
+
+        setDocuments(docSnap.data());
+
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setError(error.message);
+
+        setLoading(true);
+      }
     }
     loadDocument();
-  }, [docCollection, search, uid, cancelled]);
+  }, [docCollection, id]);
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { documents, loading, error };
+  return { document, loading, error };
 };
