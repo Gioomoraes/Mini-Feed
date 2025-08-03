@@ -1,6 +1,7 @@
 import React from "react";
 
-import {useFetchDocuments} from "../../hooks/useFetchDocuments";  
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useQuery } from "../../hooks/useQuery";
 
 const Search = () => {
   return (
