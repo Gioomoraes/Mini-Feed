@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 
@@ -30,11 +30,11 @@ export const useFetchDocument = (docCollection, id) => {
       }
     }
     loadDocument();
-  }, [docCollection, id]);
+  }, [docCollection, id, cancelled]);
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { document, loading, error };
+  return { documents, loading, error };
 };
