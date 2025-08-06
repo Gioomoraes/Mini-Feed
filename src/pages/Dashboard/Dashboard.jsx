@@ -30,6 +30,8 @@ const Dashboard = () => {
           <p>Tem posts</p>
         </div>
       )}
+
+      {posts && posts.map((post) => <h3>{post.title}</h3>)}
     </div>
   );
 };
