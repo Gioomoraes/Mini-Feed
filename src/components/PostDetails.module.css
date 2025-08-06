@@ -1,9 +1,19 @@
 .post_detail {
-    margin-bottom: 2em;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .post_detail img {
-    max-width: 600px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    
 }
 
 .post_detail h2 {
