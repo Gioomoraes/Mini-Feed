@@ -8,7 +8,11 @@ const Dashboard = () => {
   const { user } = useAuthValue();
   const uid = user.uid;
 
-  const posts = [];
+  const {
+    documents: posts,
+    loading,
+    error,
+  } = useFetchDocuments("posts", null, uid);
 
   return (
     <div>
@@ -20,7 +24,7 @@ const Dashboard = () => {
           <Link to="/posts/create" className="btn">
             Criar primeiro post
           </Link>
-        </div> 
+        </div>
       ) : (
         <div>
           <p>Tem posts</p>
