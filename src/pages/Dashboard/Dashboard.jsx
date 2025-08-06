@@ -20,7 +20,7 @@ const Dashboard = () => {
           <Link to="/posts/create" className="btn">
             Criar primeiro post
           </Link>
-        </div>
+        </div> 
       ) : (
         <div>
           <p>Tem posts</p>
