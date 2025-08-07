@@ -1,11 +1,12 @@
-import styles from "./CreatePost.module.css";
+import styles from "./EditPost.module.css";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useFetchDocuments } from "../../hooks/useFetchDocument";
 
-const CreatePost = () => {
+const EditPost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
@@ -109,4 +110,4 @@ const CreatePost = () => {
     </div>
   );
 };
-export default CreatePost;
+export default EditPost;

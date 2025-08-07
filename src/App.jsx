@@ -16,6 +16,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
+import EditPost from "./pages/EditPost/EditPost"; // Assuming this is the correct import for the edit post page
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -44,6 +45,10 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
               <Route path="/posts/:id" element={<Post />} />
+              <Route
+                path="/posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
+              />
               <Route
                 path="/posts/create"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}
