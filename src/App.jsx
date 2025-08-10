@@ -16,7 +16,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
-import EditPost from "./pages/EditPost/EditPost"; // Assuming this is the correct import for the edit post page
+import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
   const [user, setUser] = useState(undefined);
