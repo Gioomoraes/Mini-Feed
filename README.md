@@ -44,15 +44,12 @@ O projeto está estruturado em pastas principais como:
    ```bash
   git clone https://github.com/Gioomoraes/Mini-Feed.git
    ```
-2. Acesse o diretório do projeto:
-   ```bash
-   cd Mini-Feed
-   ```
-3. Instale as dependências:
+
+2. Instale as dependências:
    ```bash
    npm install
    ```
-4. Inicie
+3. Inicie
    ```bash
    npm run dev
    ```
