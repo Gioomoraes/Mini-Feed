@@ -41,22 +41,29 @@ O projeto está estruturado em pastas principais como:
 
 ## 📦 Como rodar localmente
 
-### 1️⃣ Clone o repositório  
-```bash
-git clone https://github.com/Gioomoraes/Mini-Feed.git
+1. Clone o repositório:
+   ```bash
+  git clone https://github.com/Gioomoraes/Mini-Feed.git
+   ```
+2. Acesse o diretório do projeto:
+   ```bash
+   cd Mini-Feed
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Inicie
+   ```bash
+   npm start
+   ```
+   O projeto estará disponível no navegador em  http://localhost:5173.
 
 
-Dependências
-cd Mini-Feed
-npm install
-
-Rodar
-npm run dev
-Abra no navegador http://localhost:5173
-```
 
 ---
-### 1️⃣ Clone o repositório
+### 📚 Aprendizados
+
 Este projeto foi desenvolvido para aprofundar o conhecimento em React, hooks e Firebase, com foco em:
 
 - Construção de SPA com React Router
