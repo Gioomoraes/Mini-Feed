@@ -1,4 +1,4 @@
-# 📌 Mini-Feed
+# 💻 Mini-Feed
 
 O **Mini-Feed** é uma aplicação web que simula uma rede social simples no estilo feed de publicações.  
 A ideia é permitir que usuários possam criar, visualizar, editar e interagir com postagens de forma rápida e intuitiva.
@@ -37,7 +37,6 @@ O projeto está estruturado em pastas principais como:
 - `firebase/` - Configurações 
 - `context/` - Context API (AuthContext)
 
----
 
 ## 📦 Como rodar localmente
 
@@ -55,13 +54,10 @@ O projeto está estruturado em pastas principais como:
    ```
 4. Inicie
    ```bash
-   npm start
+   npm run dev
    ```
    O projeto estará disponível no navegador em  http://localhost:5173.
 
-
-
----
 ### 📚 Aprendizados
 
 Este projeto foi desenvolvido para aprofundar o conhecimento em React, hooks e Firebase, com foco em:
