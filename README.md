@@ -38,22 +38,6 @@ O projeto está estruturado em pastas principais como:
 - `context/` - Context API (AuthContext)
 
 
-## 📦 Como rodar localmente
-
-1. Clone o repositório:
-   ```bash
-  git clone https://github.com/Gioomoraes/Mini-Feed.git
-   ```
-
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Inicie
-   ```bash
-   npm run dev
-   ```
-   O projeto estará disponível no navegador em  http://localhost:5173
 
 
 ### 📚 Aprendizados
