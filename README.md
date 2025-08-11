@@ -56,7 +56,8 @@ O projeto está estruturado em pastas principais como:
    ```bash
    npm run dev
    ```
-   O projeto estará disponível no navegador em  http://localhost:5173.
+   O projeto estará disponível no navegador em  http://localhost:5173
+
 
 ### 📚 Aprendizados
 
